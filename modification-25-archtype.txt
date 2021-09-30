@@ -1,0 +1,7 @@
+1.Removed ProductTeaser classes from models and html 
+
+2.updated aemversion=6.5.0 in script
+
+mvn -B archetype:generate -D archetypeGroupId=com.adobe.aem -D archetypeArtifactId=aem-project-archetype -D archetypeVersion=25 -D appTitle="My Site" -D appId="mysite" -D groupId="com.mysite" -DaemVersion=6.5.0
+
+3.Deleted Dispatcher.aem and cloud folders from src code
