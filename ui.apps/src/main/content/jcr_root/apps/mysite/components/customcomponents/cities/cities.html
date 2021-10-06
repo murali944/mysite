@@ -1,17 +1,35 @@
 <h1>India Popular Cities </h1>
 
-<div data-sly-use.author="${'com.mysite.core.models.Author' @ rAttribute='TestAttribute'}"></div>
- 
-    <div data-sly-list.item="${author.books}">
+<div data-sly-use.author="${'com.mysite.core.models.CitiesModel'}"></div>
+
+
+    <div data-sly-list.item="${author.cities}">
         <ul>
             <li>${item}</li>
         </ul> 
 
     </div>
- 
-  
+
+
+
+========================== USING MAP ================================
+
+<div data-sly-list.item="${author.bookDetailsWithMap}">
+        ---------------Book : ${itemList.count}--------------
+        <p> Book : <b>${item.bookname} </b></p>
+        <p> Subject : <b>${item.booksubject}</b> </p>
+        <p> Publish : <b>${item.publishyear}</b> </p>
+    </div>
 
 
 
 
 
+========================== Town MAP ================================
+
+<div data-sly-list.item="${author.townsMap}">
+        ---------------Book : ${itemList.count}--------------
+        <p> Town Name : <b>${item.name} </b></p>
+        <p> Population : <b>${item.population}</b> </p>
+
+    </div>
