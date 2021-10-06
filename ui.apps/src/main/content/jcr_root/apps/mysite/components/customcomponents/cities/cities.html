@@ -1,0 +1,15 @@
+<h1>India Popular Cities </h1>
+
+<div data-sly-use.author="${'com.mysite.core.models.Author' @ rAttribute='TestAttribute'}"></div>
+
+        ========================== USING LIST ================================
+    <div data-sly-list.item="${author.books}">
+        ---------------Cities Count : ${itemList.count}--------------
+        <p> City Name : <b>${item} </b></p>
+
+    </div>
+
+
+
+
+
