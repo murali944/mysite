@@ -1,5 +1,5 @@
 <h1>Continents and Countries </h1>
-
+${resource.name}
 <!--/* Get all child resources */-->
 <div data-sly-list.continentMultifield="${resource.getChildren}">
 
@@ -7,7 +7,7 @@
         <p>Continents</p>
 
         <ul data-sly-list.continent="${continentMultifield.getChildren}">
-            <li>Name: ${continent.continentName}</li>
+            <li>Continent Name: ${continent.continent}</li>
             <li>Countries:
 
                 <!--/* Get all child resources */-->
@@ -17,7 +17,7 @@
                     <ul data-sly-test="${countryMultifield.name == 'countries'}"
                         data-sly-list.country="${countryMultifield.getChildren}">
 
-                        <li>Name: ${country.countryName}</li>
+                        <li>Country Name: ${country.countryName}</li>
                     </ul>
                 </div>
             </li>
