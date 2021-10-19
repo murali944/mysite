@@ -2,24 +2,16 @@ package com.mysite.core.models;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
 
 import org.apache.sling.api.SlingHttpServletRequest;
-import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.ExporterOption;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.day.cq.wcm.api.Page;
 
 @Model(adaptables = SlingHttpServletRequest.class, adapters = CitiesModel.class, resourceType = CitiesModel.RESOURCE_TYPE, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 
@@ -30,11 +22,6 @@ public class CitiesModel {
 	private static final Logger LOG = LoggerFactory.getLogger(CitiesModel.class);
 	final protected static String RESOURCE_TYPE = "mysite/components/customcomponents/cities";
 
-	@Inject
-	Resource resource;
-
-	@ScriptVariable
-	Page currentPage;
 
 	@ValueMapValue
 	private List<String> cities;
@@ -47,7 +34,8 @@ public class CitiesModel {
 		}
 	}
 
-	public List<Map<String, String>> getTownsMap() {
+	
+	/*public List<Map<String, String>> getTownsMap() {
 		List<Map<String, String>> townsList = new ArrayList<Map<String, String>>();
 		try {
 			Resource componentResource = resource.getChild("towns");
@@ -85,7 +73,7 @@ public class CitiesModel {
 	            LOG.info("\n ERROR while getting Book Details {} ",e.getMessage());
 	        }
 	        return bookDetailsMap;
-	    }
+	    }*/
 
 
 }

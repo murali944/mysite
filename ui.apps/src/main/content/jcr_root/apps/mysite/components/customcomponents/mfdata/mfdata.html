@@ -1,0 +1,17 @@
+<h1>Multifield Data Demo</h1>
+
+<div data-sly-use.author="${'com.mysite.core.models.RealMFDataModel'}"></div>
+
+
+     <ul>
+            <li>${author.publishdate}</li>
+        </ul> 
+        <br>
+    <div data-sly-list.item="${author.detailsList}">
+        <ul>
+            <li>${item.subjectName}</li>
+            <li>${item.author}</li>
+        </ul> 
+
+    </div>
+
