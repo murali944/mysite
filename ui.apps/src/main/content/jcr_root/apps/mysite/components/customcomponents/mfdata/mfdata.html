@@ -1,5 +1,10 @@
 <h1>Multifield Data Demo</h1>
 
+Component Resouce Name: ${resource.name}
+<br>
+Component Resouce Path: ${resource.path}
+<br>
+
 <div data-sly-use.author="${'com.mysite.core.models.RealMFDataModel'}"></div>
 
 
@@ -14,4 +19,43 @@
         </ul> 
 
     </div>
+
+
+
+
+*********************************************************************
+<br>
+Printing data with out SLing model and just using HTL
+<br>
+*********************************************************************
+<!-- here we have reference of mfdata node, any data saved under component node that can be accessed using resource obj-->
+<br>
+Component Resouce Name: ${resource.name}
+<br>
+Component Resouce Path: ${resource.path}
+<br>
+<!-- gaining the reference of detailsList Node-->
+<div data-sly-list.detailsList="${resource.getChildren}">
+
+publish Date : ${resource.publishdate}
+
+
+<!-- gaining the reference of child nodes under detailsList Node, ie itemo, item1 etc...-->
+
+<ul data-sly-test="${detailsList.name == 'detailsList'}" data-sly-list.detailsListitem="${detailsList.getChildren}">
+
+<!--Now printing the data from each node of item-->
+	<li>Author Name: ${detailsListitem.author}</li>
+	<br>
+	<li>Subject Name: ${detailsListitem.subjectName}</li>
+	<br>
+</ul>
+
+
+</div>
+
+
+  Publish date using properties object : ${properties.publishdate}
+
+
 
